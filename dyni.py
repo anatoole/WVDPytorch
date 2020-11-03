@@ -118,6 +118,7 @@ for epoch in range(args.epochs):
         x = torch.unsqueeze(x, dim=1)
         x = x.cuda(cuda0)
         label = label.cuda(cuda0)
+        optimizer.zero_grad()
         pred = model(x)
         label = torch.squeeze(label, dim = 1)
         if len(label.shape) == 2:
